@@ -1,0 +1,454 @@
+/* A css that is used to style templates that is used in more than one page */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Gotham SSm", "Lato", "Montserrat", sans-serif;
+}
+
+/* ========================================
+   Header style
+   ======================================== */
+
+/* The header's text */
+div.header ul li a {
+  font-family: var(--header-font-family), sans-serif; /* font-family: "verdana", sans-serif; */
+  font-weight: bold; /* font-weight: bold; */
+  font-size: 12px; /* font-size: 12px; */
+  color: var(--text-color); /* color: var(--text-color); */
+  text-decoration: none; /* disable the dark blue highlight */
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+  padding: 2em;
+  margin: -2em;
+}
+
+/* The header */
+div.header {
+  display: flex; /* flexbox layout */
+  justify-content: flex-end;
+  padding: 15px 5%; /* 15px top and bottom, 5% left and right */
+  background: var(--main-color);
+  z-index: 500; /* make sure the header is on top of the background image */
+}
+
+/* The header's home button */
+ul.home {
+  margin-right: auto;
+  list-style: none;
+}
+
+/* The header's home button */
+div.header ul li {
+  display: inline-block;
+  padding: 0px 70px;
+}
+
+/* The header's home button */
+div.header ul a:hover {
+  color: hsl(240deg 14% 79%);
+}
+
+/* The header's menu buttons */
+ul.menu {
+  list-style: none;
+}
+
+/* The header's icon */
+div.header img {
+  padding: 0%;
+  transform: translateY(3px);
+}
+
+/* The header's icon */
+.navicon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: scale(200%) translateY(20%);
+  user-select: none;
+  display: none;
+}
+
+/* The header when the width is less than 750px */
+@media screen and (max-width: 751px) {
+  /* The hamburger menu */
+  div.header ul.menu {
+    transform: translateX(100%);
+    transition: transform 0.2s ease-in-out;
+    margin-top: 49px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    flex-direction: column;
+    z-index: 11;
+  }
+
+  /* A show animation */
+  div.header ul.menu.show {
+    transform: translateX(0%);
+  }
+
+  /* The menu buttons */
+  div.header ul.menu li {
+    display: block;
+    padding: 20px;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  /* The menu buttons */
+  div.header ul.menu li a {
+    font-family: var(--header-font-family), sans-serif; /* font-family: "verdana", sans-serif; */
+    font-weight: bold; /* font-weight: bold; */
+    color: black;
+    font-size: 12px;
+  }
+
+  div.header {
+    justify-content: flex-start;
+  }
+
+  /* The header's home button */
+  .hamburger-menu {
+    margin-left: auto;
+    cursor: pointer;
+    user-select: none;
+    font-size: 12px;
+    color: var(--text-color);
+  }
+}
+
+/* Hide the hamburger menu and the home mobile button when the width is more than 750px */
+@media screen and (min-width: 751px) {
+  .hamburger-menu {
+    display: none;
+  }
+
+  .home-mobile {
+    display: none;
+  }
+}
+
+/* ========================================
+   Footer style
+   ======================================== */
+
+/* The footer */
+div.footer {
+  background-color: var(--main-color);
+  color: var(--text-color);
+  height: 10px;
+  margin-top: 50px;
+  text-align: center;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+/* ========================================
+   Main style
+   ======================================== */
+
+/* The main div mentioned in the coursework*/
+div.main {
+  text-align: center;
+}
+
+/* The background mentioned in the coursework*/
+div.background {
+  background-image: url(../background/arcade-unsplash.jpg);
+  position: absolute;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  /* filter: blur(5px); */
+  background-color: darkblue;
+}
+
+/* Center the text */
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+/* ========================================
+   Dialog box style
+   ======================================== */
+
+/* The white background */
+#dialogoverlay {
+  opacity: 0.8;
+  background: #fff;
+  width: 100vw; /* set the width to 100% of the viewport width */
+  height: 100vh; /* set the height to 100% of the viewport height */
+  z-index: 10;
+  position: fixed; /* change to fixed */
+  top: 0; /* set the top to 0 */
+  left: 0; /* set the left to 0 */
+}
+
+/* The dialog wrapper */
+.dialog-wrapper {
+  user-select: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding-top: 10vh;
+  justify-content: center;
+}
+
+/* The dialog class */
+.dialog {
+  display: flex;
+  justify-content: center; /* aligns items horizontally in the center */
+}
+
+/* The dialog box */
+#dialogbox {
+  min-width: 350px;
+  width: 40vw;
+  z-index: 10;
+  background: #666;
+  font-size: 19px;
+  padding: 10px;
+  color: var(--text-color);
+  text-align: left;
+  border-radius: 7px;
+  position: absolute;
+}
+
+/* The dialog box body */
+#dialogboxbody {
+  background: var(--secondary-color);
+  padding: 20px;
+  color: var(--text-color);
+  text-align: center;
+  border-radius: 7px;
+}
+
+/* The dialog box footer left */
+#dialogboxfootL {
+  background: #666;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: left;
+  position: absolute;
+}
+
+/* The dialog box footer right */
+#dialogboxfootR {
+  background: #666;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: right;
+}
+
+/*========================================
+  Button style
+  ========================================*/
+
+/* A default button */
+.material-button {
+  padding: 5px;
+  font-style: bold;
+  /* margin-left: auto;
+  margin-right: auto; */
+  min-width: 75px;
+  height: 25px;
+  color: var(--text-color);
+  background-color: var(--secondary-color);
+  border: none;
+  border-radius: 5px;
+  transition: all 0.3s ease 0s;
+}
+
+/* A default button on hover */
+.material-button:hover {
+  transform: scale(1.025);
+  transition-duration: 0.15s;
+  filter: brightness(95%);
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+
+/* ========================================
+   Default box style
+   ======================================== */
+/* a default box fot a page*/
+
+/* A box wrapper which centers the box*/
+.box-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  text-align: center;
+}
+
+/* The box inside the wrapper */
+div.box {
+  min-width: 350px;
+  background-color: white;
+  border: 1.5px solid darkgray;
+  border-radius: 5px;
+  padding: 48px 40px 36px;
+  padding-bottom: 10vh;
+}
+
+/* The input field's wrapper */
+.input-field-wrapper {
+  margin-top: 24px;
+  margin-bottom: 24px;
+  margin-left: 1px;
+  margin-right: 1px;
+  text-align: left;
+}
+
+/* The input field */
+.input-field {
+  width: 100%;
+  height: 54px;
+  position: relative;
+}
+
+/* The input field's input */
+.input-field input {
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 13px;
+  padding-bottom: 13px;
+  width: 100%;
+  height: 100%;
+  border: 1px solid lightgray;
+  border-radius: 4px;
+  outline: none;
+}
+
+/* The input field's label */
+.input-field label {
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  position: absolute;
+  left: -0.1px;
+  bottom: 5px;
+  pointer-events: none;
+  transition: all ease 0.2s;
+  background-clip: content-box;
+  background-color: white;
+  font-size: 14px;
+}
+
+/* Make the input's field's label go into the bracket on focus or when there are text in the input field */
+.input-field input:focus ~ label,
+.input-field input:valid ~ label {
+  transform-origin: left top;
+  text-align: left;
+  scale: 0.85;
+  transform: translate(0, -26px);
+  color: var(--secondary-color);
+}
+
+/* The input field's border on focus */
+.input-field input:focus {
+  border: 2.5px solid var(--secondary-color);
+}
+
+/* Remove the blue backgound in forms */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px white inset !important;
+}
+
+/* Make the input field red when there is an error */
+.error {
+  font-size: 12px;
+  color: red;
+}
+
+/* A next button */
+#next {
+  float: right;
+}
+
+/* A previous button */
+#previous {
+  float: left;
+}
+
+/*shrink the box on mobile*/
+@media screen and (min-width: 450px) {
+  .box {
+    padding: 48px 40px 36px;
+  }
+}
+
+/* ========================================
+   Theme selector style
+   ======================================== */
+
+/* The theme selector when width is less than 751*/
+.theme-selector {
+  display: none;
+}
+
+/* Display the theme selector when width is more than 751*/
+@media screen and (min-width: 751px) {
+  .theme-selector {
+    display: flex;
+    position: relative;
+    z-index: 10;
+  }
+  .color-palette {
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    display: grid;
+    grid-row-gap: 10px;
+    padding: 10px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.8);
+  }
+  .color-palette label {
+    cursor: pointer;
+    position: relative;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+  }
+}
+
+/* ========================================
+   Scrollbar style
+   ======================================== */
+/* A better looking scrollbar for all pages */
+*::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px gray;
+  border-radius: 10px;
+}
+
+*::-webkit-scrollbar {
+  width: 10px;
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px gray;
+  background-color: #555;
+}

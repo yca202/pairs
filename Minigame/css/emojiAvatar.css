@@ -1,0 +1,35 @@
+/* A generic emoji avatar component for use in web applications. */
+
+/* The container for the avatar. */
+.emoji-avatar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  user-select: none;
+}
+
+/* The face of the avatar. */
+.face {
+  position: absolute;
+  transform: scale(1.5%);
+  user-select: none;
+}
+
+/* The hat of the avatar. */
+.hat {
+  position: absolute;
+  transform: translateY(-5px);
+  font-size: 4px;
+  user-select: none; /* Standard */
+}
+
+/* The accessory of the avatar. */
+.accessory {
+  position: absolute;
+  scale: 0.25;
+  user-select: none; /* Standard */
+  transform: translate(60%, 40%);
+}

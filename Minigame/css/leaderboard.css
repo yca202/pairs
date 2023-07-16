@@ -1,0 +1,148 @@
+/* ====================
+    Leaderboard Header
+==================== */
+
+/* The table header for choosing the level */
+#leaderboard {
+  font-family: "verdana", sans-serif; /* font-family: "verdana", sans-serif; */
+  font-weight: bold; /* font-weight: bold; */
+  list-style-type: none;
+  margin: auto;
+  margin-bottom: 5vh;
+  margin-top: 3vh;
+  background-color: var(--secondary-color);
+  overflow: hidden;
+  cursor: pointer;
+  min-width: 350px;
+  max-width: 800px;
+  border: none;
+  overflow-y: scroll;
+  max-height: 60px;
+  border-radius: 7px;
+}
+
+/* The table header for choosing the level */
+#leaderboard li {
+  float: left;
+  user-select: none; /* Standard */
+}
+
+/* The table header text for choosing the level */
+#leaderboard li a {
+  transition: all 0.3s ease 0s;
+  display: block;
+  padding: 5px;
+  padding-left: 30px;
+  padding-right: 30px;
+  /* width: 4cm; */
+  color: var(--text-color);
+  text-align: center;
+  text-decoration: none;
+}
+
+/* The table header text for choosing the level */
+#leaderboard li a:hover {
+  color: hsl(240deg 14% 79%);
+}
+
+/* ====================
+    Leaderboard Table
+==================== */
+
+/* The table header */
+#leaderboard-table th {
+  background-color: var(--main-color);
+}
+
+/* The even table rows */
+#leaderboard-table tr:nth-child(even) {
+  background-color: lightgray;
+}
+
+/* The odd table rows */
+#leaderboard-table tr:nth-child(odd) {
+  background-color: white;
+}
+
+/* The table cells */
+#leaderboard-table td,
+#leaderboard-table th {
+  padding: 5px;
+  text-align: center;
+}
+
+/* The box for the table */
+.table-box {
+  min-width: 350px;
+  max-width: 800px;
+  height: 70vh;
+  margin: 0 auto;
+  padding: 10px;
+  color: var(--text-color);
+  background-color: gray;
+  border: 5px solid grey;
+  border-radius: 7px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+  overflow-y: scroll;
+  text-align: center;
+  color: black;
+}
+
+/* The table */
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0px 2px;
+}
+
+/* Adjust height of the table rows */
+tr {
+  height: 40px;
+  color: black;
+  font-weight: 700;
+}
+
+/* The name column */
+.nameRow {
+  width: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* The icon column */
+.imageRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  scale: calc(
+    30 / 500
+  ); /* adjust this to change the size of the emoji from 500 pixels to 200 pixels*/
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Rounded corners for the table */
+table tr:first-child th {
+  color: var(--text-color);
+  border-radius: 7px;
+}
+
+/* Rounded corners for the left side*/
+table tr td:first-child {
+  border: none;
+  border-top-left-radius: 7px;
+  border-bottom-left-radius: 7px;
+}
+
+/* Rounded corners for the right side*/
+table tr td:last-child {
+  border: none;
+  border-top-right-radius: 7px;
+  border-bottom-right-radius: 7px;
+}

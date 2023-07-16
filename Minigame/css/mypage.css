@@ -1,0 +1,17 @@
+/* Mypage's icon */
+
+.icon-wrapper {
+  margin-top: 24px;
+  margin-bottom: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 84px;
+  user-select: none;
+}
+
+.icon {
+  transform: scale(700%);
+  height: 12px;
+  width: 12px;
+}

@@ -1,0 +1,255 @@
+/* A wrapper class that encapsulate everything and make them center*/
+/* ========================================
+    General style
+    ======================================== */
+.pairs-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+}
+
+/* The gray box  */
+.cards-wrapper {
+  padding: 25px;
+  padding-top: 5px;
+  border-radius: 10px;
+  background: gray;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* The cards container when high score is reached*/
+.cards-wrapper.glow {
+  box-shadow: 0px 0px 10px 5px #ffd700;
+  background: #ffd700;
+  /* in order: x offset, y offset, blur size, spread size, color */
+  /* blur size and spread size are optional (they default to 0) */
+}
+
+/* The cards container */
+.cards {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+  height: 400px;
+  width: 400px;
+  flex-wrap: wrap;
+  justify-content: left;
+  overflow: visible;
+}
+
+/* ========================================
+   Card style
+   ======================================== */
+
+/* The cards */
+.cards .card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+  position: relative;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  box-shadow: 0 1px 5px #00000099;
+  height: 90px;
+  width: 90px;
+  margin: 5px;
+  opacity: 0;
+  transition-duration: 300ms;
+  transition-property: transform, box-shadow;
+  transition-timing-function: ease-out;
+  transform: rotate3d(0);
+}
+
+.card:hover {
+  transition-duration: 150ms;
+}
+
+/* Simulate a lightsorce for the card for a 3d effect when hovering */
+.card .glow {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-image: radial-gradient(circle at 50% -20%, #ffffff22, #0000000f);
+}
+
+/* The cards when they shaking */
+.card.shake {
+  animation: shake 0.4s ease-in-out;
+}
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(-13px);
+  }
+  40% {
+    transform: translateX(13px);
+  }
+  60% {
+    transform: translateX(-8px);
+  }
+  80% {
+    transform: translateX(8px);
+  }
+}
+
+/* The cards when they are appearing at the start */
+.card.appear {
+  animation: appear 0.3s forwards ease-in-out;
+  animation-delay: 0s; /* Add this line to set an initial delay */
+}
+@keyframes appear {
+  0% {
+    opacity: 0;
+    transform: translateX(7px);
+    scale: 0.5;
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(14px);
+    scale: 1.1;
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+    scale: 1;
+  }
+}
+
+/* The front and back of the card */
+.card .view {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border-radius: 7px;
+  background: whitesmoke;
+  pointer-events: none;
+  backface-visibility: hidden;
+  transition: transform 0.3s linear;
+}
+
+/* The front of the card */
+.card .front-view img {
+  width: 19px;
+}
+
+/* The back of the card */
+.card .back-view img {
+  max-width: 45px;
+}
+
+/* The card when it is flipped */
+.card .back-view {
+  transform: rotateY(-180deg);
+}
+
+/* The card when it is flipped */
+.card.flip .back-view {
+  transform: rotateY(0);
+}
+
+/* The card when it is flipped */
+.card.flip .front-view {
+  transform: rotateY(180deg);
+}
+
+/* Make the image of the card absolute to have the emoji stack together */
+.card img {
+  position: absolute;
+}
+
+/* Make the z-index of the skin lower than other parts */
+.card img:nth-child(2) {
+  z-index: 1;
+}
+.card img:nth-child(3) {
+  z-index: 2;
+}
+
+/* ========================================
+   Score style
+   ======================================== */
+
+/* A class that make the text flash */
+.flash-text {
+  animation: flash 1s infinite;
+}
+@keyframes flash {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+/* The score container */
+#timer {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--text-color);
+  background-color: var(--main-color);
+  padding: 10px;
+  border-radius: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/* Each rows in the timer*/
+.timer-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+/* The left and right part of the timer */
+.left,
+.right,
+.separator {
+  flex: 1;
+  text-align: center;
+}
+
+/* The separator between the left and right part of the timer */
+.separator {
+  flex: 0;
+}
+
+/* ========================================
+   Dev mode style
+   ======================================== */
+
+/* The developer options(hidden by default) */
+.dev {
+  display: none;
+}
+
+.card.reaval .back-view {
+  transform: rotateY(0);
+}
+.card.reaval .front-view {
+  transform: rotateY(180deg);
+}
+
+/* Unhide the following styles to enable dev mode ********************************** */
+
+/* .dev {
+  display: contents;
+} */

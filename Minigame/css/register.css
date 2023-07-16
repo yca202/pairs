@@ -1,0 +1,5 @@
+/* Make the bottom of the register box bigger to make it look better */
+
+#register-box {
+  padding-bottom: 20vh;
+}
